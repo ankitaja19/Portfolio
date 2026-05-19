@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankita Jain | Senior Product Manager</title>
+    <meta name="description" content="Senior Product Manager with 9+ years building AI-powered platforms, cloud-native products, and data-driven SaaS solutions at scale.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        :root {
+            --bg: #0a0a0f;
+            --bg-card: #111118;
+            --bg-card-hover: #16161f;
+            --text: #e4e4e7;
+            --text-muted: #71717a;
+            --accent: #a78bfa;
+            --accent-dim: rgba(167, 139, 250, 0.1);
+            --accent-border: rgba(167, 139, 250, 0.2);
+            --green: #34d399;
+            --border: rgba(255, 255, 255, 0.06);
+            --font: 'Inter', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(16px);
+            background: rgba(10, 10, 15, 0.85);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--text); }
+
+        /* Sections */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-label {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 5rem;
+        }
+
+        .hero-content { max-width: 700px; }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            letter-spacing: -1.5px;
+            color: var(--text);
+        }
+
+        .hero-role {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            max-width: 580px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #0a0a0f;
+            border: none;
+        }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+        .btn-ghost:hover { border-color: var(--accent-border); color: var(--text); }
+
+        .hero-links {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .hero-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .hero-links a:hover { color: var(--accent); }
+
+        .hero-links span { color: var(--border); }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+
+        .stat p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+            font-weight: 500;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            aspect-ratio: 4/5;
+            background: var(--bg-card);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(10, 10, 15, 0.5));
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .about-image {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .about-text strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .about-text a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Experience */
+        .exp-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.2rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .exp-item:last-child { border-bottom: none; }
+
+        .exp-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        .exp-content h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.1rem;
+        }
+
+        .exp-company {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .exp-meta {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin: 0.3rem 0 0.6rem;
+            font-family: var(--mono);
+        }
+
+        .exp-content p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 0.3rem;
+        }
+
+        .exp-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.4rem 0 0;
+        }
+
+        .exp-content ul li {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            padding-left: 1rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+
+        .exp-content ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .exp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.6rem;
+        }
+
+        .tag {
+            padding: 0.2rem 0.6rem;
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-border);
+            border-radius: 5px;
+            font-size: 0.72rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-border);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .project-type {
+            font-size: 0.7rem;
+            color: var(--green);
+            background: rgba(52, 211, 153, 0.1);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-impact {
+            font-size: 0.8rem;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        /* Skills */
+        .skill-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-group h4 {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.35rem 0.8rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.82rem;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent-border);
+            background: var(--accent-dim);
+        }
+
+        /* Mentorship */
+        .mentorship-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .mentorship-card h3 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            letter-spacing: -2px;
+        }
+
+        .mentorship-card .subtitle {
+            font-size: 1.1rem;
+            color: var(--text);
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .mentorship-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem auto 0;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .mentorship-card ul li {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.8rem;
+        }
+
+        .mentorship-card ul li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.7rem;
+            top: 0.4rem;
+        }
+
+        .mentorship-card ul li strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .mentorship-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            max-width: 500px;
+            margin: 0.8rem auto 0;
+            line-height: 1.7;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: block;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent-border);
+            transform: translateY(-2px);
+        }
+
+        .contact-card h4 {
+            font-size: 0.9rem;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.4rem; }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+</style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">AJ.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#mentorship">Mentorship</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="container">
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-role">Senior Product Manager</div>
+                <h1>Ankita Jain</h1>
+                <p class="hero-desc">
+                    Building AI-powered platforms & cloud-native products at scale — from 0-to-1 launches to $100M+ revenue outcomes across enterprise and consumer segments.
+                </p>
+                <div class="hero-actions">
+                    <a href="#experience" class="btn btn-primary">View My Work</a>
+                    <a href="https://drive.google.com/file/d/1SSqYu2yrjVsd6GFLCczRefpVJYxJlyjZ/view?usp=sharing" target="_blank" class="btn btn-ghost">Download Resume</a>
+                    <a href="#contact" class="btn btn-ghost">Contact Me</a>
+                </div>
+                <div class="hero-links">
+                    <a href="https://github.com/ankitaja19" target="_blank">GitHub</a>
+                    <span>·</span>
+                    <a href="https://www.linkedin.com/in/ankitajain1995/" target="_blank">LinkedIn</a>
+                    <span>·</span>
+                    <a href="mailto:ankita1995jain@gmail.com">ankita1995jain@gmail.com</a>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat">
+                        <h3>9+</h3>
+                        <p>Years in Product</p>
+                    </div>
+                    <div class="stat">
+                        <h3>$100M+</h3>
+                        <p>Revenue Impact</p>
+                    </div>
+                    <div class="stat">
+                        <h3>400+</h3>
+                        <p>PMs Mentored</p>
+                    </div>
+                    <div class="stat">
+                        <h3>0→1</h3>
+                        <p>Product Launches</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="fade-in">
+            <span class="section-label">//ABOUT</span>
+            <h2 class="section-title">Who I Am</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I'm a product manager who thrives at the intersection of <strong>AI/GenAI product development</strong> and <strong>platform engineering at scale</strong>. Currently at <strong>Entain</strong>, I'm building the CRM Platform — owning the Promotions Engine, API standardisation, and campaign adoption across gaming verticals.</p>
+                    <br>
+                    <p>Before Entain, I spent 5 years at <strong>Microsoft</strong> where I launched <strong>Azure Center for SAP Solutions</strong> from 0-to-1, built AI-powered automation tools, and led the Mission Critical Hub migration saving $50M+. I also worked on Azure Supply Chain tooling, integrating AI/ML to automate region monitoring and capacity planning.</p>
+                    <br>
+                    <p>I started my career as a <strong>Software Engineer at Wipro</strong>, building enterprise automation with BizTalk and C#, before transitioning into product at <strong>Harman Corporation</strong> where I shipped a high-performance search algorithm across 9M+ files.</p>
+                    <br>
+                    <p>Outside of work, I mentor aspiring PMs and create content about product management. I graduated from <strong>Amity University</strong> with a B.Tech in Computer Science.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/profile.jpg" alt="Ankita Jain at Microsoft">
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="fade-in">
+            <span class="section-label">//EXPERIENCE</span>
+            <h2 class="section-title">Where I've Worked</h2>
+
+            <div class="exp-item">
+                <div class="exp-icon">E</div>
+                <div class="exp-content">
+                    <h3>Senior Product Manager</h3>
+                    <span class="exp-company">Entain</span>
+                    <div class="exp-meta">Sep 2025 – Present · Hyderabad, India</div>
+                    <ul>
+                        <li>Owned 0-to-1 delivery of CRM Studio — driving 90% reduction in offer creation time (21 min → 2 min) and enabling scalable, self-serve campaign execution.</li>
+                        <li>Identified 219 EDS platform APIs with zero central visibility; built a custom Kiro AI agent to automate health scoring, risk mapping, and backlog creation.</li>
+                        <li>Leveraged AI across the full product lifecycle — product discovery, squad tracking, and API inventory management.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span class="tag">CRM Platform</span>
+                        <span class="tag">AI Agents</span>
+                        <span class="tag">API Strategy</span>
+                        <span class="tag">Promotions Engine</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-icon">M</div>
+                <div class="exp-content">
+                    <h3>Product Manager 2</h3>
+                    <span class="exp-company">Microsoft Corporation</span>
+                    <div class="exp-meta">Jul 2020 – Aug 2025 · Hyderabad, India</div>
+                    <ul>
+                        <li>Launched Azure Center for SAP Solutions from 0-to-1 — 30% customer conversion in 6 months, $100M+ revenue impact.</li>
+                        <li>Built AI-powered case assignment bot using LLM automation — 90% reduction in manual operations.</li>
+                        <li>Built real-time blast radius dashboard adopted in 100+ incident reviews, cutting triage time by 90%.</li>
+                        <li>Led Mission Critical Hub migration — $50M+ savings, improved platform reliability.</li>
+                        <li>Integrated AI/ML for supply chain monitoring — 40% workload reduction, unlocked 31PB capacity.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span class="tag">Azure</span>
+                        <span class="tag">SAP</span>
+                        <span class="tag">AI/ML</span>
+                        <span class="tag">Supply Chain</span>
+                        <span class="tag">Enterprise</span>
+                        <span class="tag">0-to-1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-icon">H</div>
+                <div class="exp-content">
+                    <h3>Associate Product Manager</h3>
+                    <span class="exp-company">Harman Corporation</span>
+                    <div class="exp-meta">Aug 2019 – Jul 2020</div>
+                    <ul>
+                        <li>Designed high-performance search algorithm across 9M+ files — 20% query time reduction.</li>
+                        <li>Translated complex business requirements into technical roadmaps, accelerating delivery by 30%.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span class="tag">Search Platform</span>
+                        <span class="tag">Technical Roadmaps</span>
+                        <span class="tag">User Research</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-icon">W</div>
+                <div class="exp-content">
+                    <h3>Software Engineer</h3>
+                    <span class="exp-company">Wipro</span>
+                    <div class="exp-meta">Dec 2016 – Aug 2019</div>
+                    <ul>
+                        <li>Automated order processing, expense management, and banking integrations — 40% error reduction.</li>
+                        <li>Built BizTalk configuration search tool centralising system data for engineering teams.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span class="tag">BizTalk</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">Angular</span>
+                        <span class="tag">Enterprise Automation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="fade-in">
+            <span class="section-label">//PROJECTS</span>
+            <h2 class="section-title">Things I've Built</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Products and platforms I've taken from concept to launch.</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Azure Center for SAP Solutions</h3>
+                        <span class="project-type">0-to-1 Launch</span>
+                    </div>
+                    <p>Unified observability and control platform for SAP workloads on Azure. Full lifecycle ownership from ideation through GTM.</p>
+                    <div class="project-impact">📈 30% conversion in 6 months · $100M+ revenue</div>
+                    <div class="exp-tags">
+                        <span class="tag">Azure</span>
+                        <span class="tag">SAP</span>
+                        <span class="tag">Enterprise</span>
+                        <span class="tag">GTM</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>CRM Studio</h3>
+                        <span class="project-type">0-to-1 Launch</span>
+                    </div>
+                    <p>Unified campaign management platform replacing fragmented Marketing Ops tooling. Self-serve campaign execution at scale.</p>
+                    <div class="project-impact">⚡ Offer creation: 21 min → 2 min (90% faster)</div>
+                    <div class="exp-tags">
+                        <span class="tag">CRM</span>
+                        <span class="tag">Promotions</span>
+                        <span class="tag">Gaming</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>AI Case Assignment Bot</h3>
+                        <span class="project-type">AI/LLM</span>
+                    </div>
+                    <p>LLM-powered automation eliminating manual triage workflows, improving SLA adherence across global engineering teams.</p>
+                    <div class="project-impact">🤖 90% reduction in manual operations</div>
+                    <div class="exp-tags">
+                        <span class="tag">LLM</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">Support</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>API Inventory</h3>
+                        <span class="project-type">AI Agent</span>
+                    </div>
+                    <p>Custom AI agent automating health scoring, risk mapping, and backlog creation for 219 platform APIs with zero prior visibility.</p>
+                    <div class="project-impact">🔍 First single source of truth for API discoverability</div>
+                    <div class="exp-tags">
+                        <span class="tag">AI Agent</span>
+                        <span class="tag">API</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Blast Radius Dashboard</h3>
+                        <span class="project-type">Incident Mgmt</span>
+                    </div>
+                    <p>Real-time incident management dashboard for critical Azure core resources, enabling faster engineering response.</p>
+                    <div class="project-impact">🛡️ 100+ incident reviews · 90% triage time cut</div>
+                    <div class="exp-tags">
+                        <span class="tag">Azure</span>
+                        <span class="tag">Real-time</span>
+                        <span class="tag">Observability</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Botcraft Studio</h3>
+                        <span class="project-type">Hackathon Winner</span>
+                    </div>
+                    <p>Top-ranked at Microsoft Hack to Reimagine Productivity — AI co-pilots using LLM and GenAI for context-aware productivity insights from PDFs, docs, and videos.</p>
+                    <div class="project-impact">🏆 Top-ranked in company-wide hackathon</div>
+                    <div class="exp-tags">
+                        <span class="tag">GenAI</span>
+                        <span class="tag">LLM</span>
+                        <span class="tag">Co-pilot</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="fade-in">
+            <span class="section-label">//SKILLS</span>
+            <h2 class="section-title">Technologies & Expertise</h2>
+
+            <div class="skill-group">
+                <h4>AI & GenAI Product</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">LLM-powered Automation</span>
+                    <span class="skill-tag">AI Agent Design</span>
+                    <span class="skill-tag">GenAI Product Strategy</span>
+                    <span class="skill-tag">ML-integrated Experiences</span>
+                    <span class="skill-tag">Prompt Engineering</span>
+                    <span class="skill-tag">Model Evaluation</span>
+                    <span class="skill-tag">AI Co-pilots</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h4>Platform & API</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">0-to-1 Product Launches</span>
+                    <span class="skill-tag">API-first Design</span>
+                    <span class="skill-tag">Cloud-native SaaS</span>
+                    <span class="skill-tag">Azure Platform</span>
+                    <span class="skill-tag">Scalable Data Pipelines</span>
+                    <span class="skill-tag">System Interoperability</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h4>Product Strategy & Delivery</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Roadmap Planning</span>
+                    <span class="skill-tag">OKR Definition</span>
+                    <span class="skill-tag">A/B Testing</span>
+                    <span class="skill-tag">Staged Rollouts</span>
+                    <span class="skill-tag">Feature Adoption</span>
+                    <span class="skill-tag">Pre-sales Advisory</span>
+                    <span class="skill-tag">GTM Strategy</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h4>Data & Analytics</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Success Metrics</span>
+                    <span class="skill-tag">Adoption Telemetry</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Kusto</span>
+                    <span class="skill-tag">CSAT/NPS</span>
+                    <span class="skill-tag">User Research</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h4>Tools</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">Confluence</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">Azure DevOps</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Kusto</span>
+                    <span class="skill-tag">KIRO</span>
+                    <span class="skill-tag">Claude</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentorship -->
+        <section id="mentorship" class="fade-in">
+            <span class="section-label">//MENTORSHIP</span>
+            <h2 class="section-title">Giving Back</h2>
+
+            <div class="mentorship-card">
+                <h3>400+</h3>
+                <div class="subtitle">Aspiring Product Managers Mentored</div>
+                <ul>
+                    <li>Career navigation, resume building, and breaking into product roles — with direct exposure to recruiting challenges and hiring bar-setting.</li>
+                    <li>Built <strong>PM Shorts</strong> from 0 → 1 at Microsoft — bite-sized PM content featured in the company-wide newsletter and senior band training program.</li>
+                    <li>Brought my mentorship skills to <strong>Topmate</strong> — drove impact across the 1% Club community and earned a feature on Timeshare.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="fade-in">
+            <span class="section-label">//CONTACT</span>
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Open to conversations about product, AI, mentorship, and building great things.</p>
+
+            <div class="contact-grid">
+                <a href="https://github.com/ankitaja19" target="_blank" class="contact-card">
+                    <h4>🐙 GitHub</h4>
+                    <p>See my projects & code</p>
+                </a>
+                <a href="https://www.linkedin.com/in/ankitajain1995/" target="_blank" class="contact-card">
+                    <h4>💼 LinkedIn</h4>
+                    <p>Connect professionally</p>
+                </a>
+                <a href="mailto:ankita1995jain@gmail.com" class="contact-card">
+                    <h4>✉️ Email</h4>
+                    <p>ankita1995jain@gmail.com</p>
+                </a>
+                <a href="https://drive.google.com/file/d/1SSqYu2yrjVsd6GFLCczRefpVJYxJlyjZ/view?usp=sharing" target="_blank" class="contact-card">
+                    <h4>📄 Resume</h4>
+                    <p>View full resume (PDF)</p>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
