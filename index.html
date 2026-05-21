@@ -165,18 +165,23 @@
 
         .hero-links {
             display: flex;
-            gap: 1.2rem;
+            gap: 1rem;
             align-items: center;
         }
 
         .hero-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
             transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
         }
         .hero-links a:hover { color: var(--accent); }
+        .hero-links a svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
 
         .hero-links span { color: var(--border); }
 
@@ -515,6 +520,75 @@
 
         /* Contact */
         .contact-grid {
+
+        /* Gallery */
+        .gallery-section {
+            overflow: hidden;
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .gallery-section .section-label,
+        .gallery-section .section-title {
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .gallery-wrapper {
+            overflow: hidden;
+            padding: 1rem 0;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 1rem;
+            animation: marquee 40s linear infinite;
+            width: max-content;
+        }
+
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .gallery-item {
+            flex-shrink: 0;
+            width: 220px;
+            height: 160px;
+            border-radius: 12px;
+            overflow: hidden;
+            transform: rotate(-1deg);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .gallery-item:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 180px;
+                height: 130px;
+            }
+        }
+
+        /* Contact */
+        .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
@@ -596,11 +670,15 @@
                     <a href="#contact" class="btn btn-ghost">Contact Me</a>
                 </div>
                 <div class="hero-links">
-                    <a href="https://github.com/ankitaja19" target="_blank">GitHub</a>
-                    <span>·</span>
-                    <a href="https://www.linkedin.com/in/ankitajain1995/" target="_blank">LinkedIn</a>
-                    <span>·</span>
-                    <a href="mailto:ankita1995jain@gmail.com">ankita1995jain@gmail.com</a>
+                    <a href="https://github.com/ankitaja19" target="_blank" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ankitajain1995/" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="mailto:ankita1995jain@gmail.com" aria-label="Email">
+                        <svg viewBox="0 0 24 24"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/></svg>
+                    </a>
                 </div>
 
                 <div class="stats-row">
@@ -912,6 +990,42 @@
             </div>
         </section>
 
+        </section>
+    </div>
+
+    <!-- Gallery (full-width, outside container) -->
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+    <div style="overflow:hidden;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div style="display:flex;gap:12px;animation:marquee 35s linear infinite;width:max-content;">
+            <img src="images/gallery/photo1.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo2.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo3.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo4.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo5.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo6.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo7.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo8.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo9.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo10.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo1.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo2.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo3.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo4.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo5.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo6.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo7.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo8.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo9.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+            <img src="images/gallery/photo10.jpg" style="width:360px;height:310px;object-fit:cover;border-radius:10px;flex-shrink:0;" alt="">
+        </div>
+    </div>
+
+    <div class="container">
         <!-- Contact -->
         <section id="contact" class="fade-in">
             <span class="section-label">//CONTACT</span>
