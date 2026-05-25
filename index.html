@@ -7,7 +7,7 @@
     <meta name="description" content="Senior Product Manager with 9+ years building AI-powered platforms, cloud-native products, and data-driven SaaS solutions at scale.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -41,8 +41,8 @@
             top: 0;
             width: 100%;
             padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
             z-index: 1000;
             backdrop-filter: blur(16px);
@@ -51,18 +51,23 @@
         }
 
         .nav-logo {
-            font-weight: 800;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1rem;
             color: var(--text);
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
         }
 
-        .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 400;
             transition: color 0.3s;
         }
         .nav-links a:hover { color: var(--text); }
@@ -106,11 +111,12 @@
         .hero-content { max-width: 700px; }
 
         .hero h1 {
-            font-size: clamp(2.8rem, 6vw, 4rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.2rem;
-            letter-spacing: -1.5px;
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
             color: var(--text);
         }
 
@@ -126,7 +132,12 @@
             color: var(--text-muted);
             line-height: 1.7;
             margin-bottom: 2rem;
-            max-width: 580px;
+            max-width: 600px;
+        }
+
+        .hero-desc strong {
+            color: var(--text);
+            font-weight: 600;
         }
 
         .hero-actions {
@@ -660,9 +671,9 @@
         <section class="hero" id="hero">
             <div class="hero-content">
                 <div class="hero-role">Senior Product Manager</div>
-                <h1>Ankita Jain</h1>
+                <h1>I launch products from zero. Then I make them scale.</h1>
                 <p class="hero-desc">
-                    Building AI-powered platforms & cloud-native products at scale — from 0-to-1 launches to $100M+ revenue outcomes across enterprise and consumer segments.
+                    I'm Ankita — Senior Product Manager with 9+ years building AI-powered platforms and cloud-native products at scale. Currently at <strong>Entain</strong>, previously at <strong>Microsoft</strong> where I launched <strong>Azure Center for SAP Solutions</strong> from scratch. I think in systems, ship with data, and mentor the next generation of PMs. Based in Hyderabad, India.
                 </p>
                 <div class="hero-actions">
                     <a href="#experience" class="btn btn-primary">View My Work</a>
@@ -734,8 +745,8 @@
                     <span class="exp-company">Entain</span>
                     <div class="exp-meta">Sep 2025 – Present · Hyderabad, India</div>
                     <ul>
-                        <li>Owned 0-to-1 delivery of CRM Studio — driving 90% reduction in offer creation time (21 min → 2 min) and enabling scalable, self-serve campaign execution.</li>
-                        <li>Identified 219 EDS platform APIs with zero central visibility; built a custom Kiro AI agent to automate health scoring, risk mapping, and backlog creation.</li>
+                        <li>Owned 0-to-1 delivery of CRM Studio — driving 80% reduction in campaign creation time (5 min → 1 min) and enabling scalable, self-serve campaign execution.</li>
+                        <li>Built a centralised API discovery platform using AI tooling — replacing scattered docs with a GitLab-synced source of truth and an AI use-case matcher that lets stakeholder teams self-serve the right API. Saved weeks of cross-team coordination per request.</li>
                         <li>Leveraged AI across the full product lifecycle — product discovery, squad tracking, and API inventory management.</li>
                     </ul>
                     <div class="exp-tags">
@@ -837,7 +848,7 @@
                         <span class="project-type">0-to-1 Launch</span>
                     </div>
                     <p>Unified campaign management platform replacing fragmented Marketing Ops tooling. Self-serve campaign execution at scale.</p>
-                    <div class="project-impact">⚡ Offer creation: 21 min → 2 min (90% faster)</div>
+                    <div class="project-impact">⚡ Campaign creation: 5 min → 1 min (80% faster)</div>
                     <div class="exp-tags">
                         <span class="tag">CRM</span>
                         <span class="tag">Promotions</span>
@@ -922,10 +933,11 @@
             </div>
 
             <div class="skill-group">
-                <h4>Platform & API</h4>
+                <h4>Platform, API & CRM</h4>
                 <div class="skill-tags">
                     <span class="skill-tag">0-to-1 Product Launches</span>
                     <span class="skill-tag">API-first Design</span>
+                    <span class="skill-tag">CRM</span>
                     <span class="skill-tag">Cloud-native SaaS</span>
                     <span class="skill-tag">Azure Platform</span>
                     <span class="skill-tag">Scalable Data Pipelines</span>
